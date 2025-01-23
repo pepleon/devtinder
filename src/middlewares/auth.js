@@ -14,7 +14,7 @@ if(!token) {
 const decodedMessage = jwt.verify(token,process.env.JWT_SECRET)
 
 
-console.log(decodedMessage);
+
 
 const {_id} = decodedMessage;
 

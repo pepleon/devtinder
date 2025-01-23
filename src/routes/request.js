@@ -3,6 +3,7 @@ const requestRouter = express.Router();
 const { userAuth } = require("../middlewares/auth");
 const ConnectionRequest = require("../models/connectionRequest");
 const User  = require("../models/user");
+const sendEmail = require("../utils/sendEmail");
 
 
 
@@ -57,6 +58,10 @@ try {
    
     
 const data = await connectionRequest.save();
+
+
+const resdata = await sendEmail.run();
+
    
 res.json({
     message: "Connection Request sent Successfully ",
@@ -92,7 +97,7 @@ try{
         status: "interested",
     });
 
-    console.log(connectionRequest);
+  
   if(!connectionRequest){
     return res.status(404).json({message: "Connection request not found"});
   }
