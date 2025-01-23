@@ -15,7 +15,7 @@ else if(!validator.isStrongPassword(password)){
 
 };
 
-
+///////////////////////
 
 const validateEditProfileData = (req) => {
 

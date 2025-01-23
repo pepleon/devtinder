@@ -4,6 +4,7 @@ const { userAuth } = require("../middlewares/auth");
 
 
 const chatRouter = express.Router();
+//////////////////////////////////////
 
 
 chatRouter.get("/chat/:targetUserId", userAuth, async (req,res)=>{
